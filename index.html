@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Home Page</title>
+    <meta
+      name="description"
+      content="Course Home Page for WDD 231 Assignment"
+    />
+    <meta name="author" content="Michael Mwanza" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
+    <script defer src="scripts/navigation.js"></script>
+    <script defer src="scripts/date.js"></script>
+    <script defer src="scripts/course.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="images/profile.jpeg" alt="Michael Mwanza" />
+      <span>Michael Mwanza</span>
+    </header>
+    <nav>
+      <button class="menu-icon">☰</button>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="chamber.html">Chamber</a></li>
+        <li>
+          <a href="https://github.com/Mikelesnr" target="_blank"
+            >GitHub Profile</a
+          >
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/michael-mwanza-n" target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Home</h1>
+      <section class="container-grid">
+        <div class="course-work">
+          <h2 class="mid-h2">Course Work</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="vic-falls">
+          <h2 class="mid-h2">Vic Falls, Zimbabwe</h2>
+          <img
+            src="images/victoria-falls.jpg"
+            class="aside-img"
+            alt="Water Fall"
+          />
+          <p>Water Fall</p>
+        </div>
+      </section>
+      <section class="certificates">
+        <h2 class="mid-h2">Web and Computer Programming Certificate</h2>
+        <div class="filter-buttons">
+          <button class="btn" onclick="filterCourses('all')">All</button>
+          <button class="btn" onclick="filterCourses('CSE')">CSE</button>
+          <button class="btn" onclick="filterCourses('WDD')">WDD</button>
+        </div>
+        <div class="courses"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; <span id="currentyear"></span> Michael Mwanza</p>
+    </footer>
+  </body>
+</html>

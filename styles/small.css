@@ -1,0 +1,166 @@
+/* Basic styles for smaller screens */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+header img {
+    width: 50px;
+    height: 50px;  
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.aside-img{
+    width: 90px;
+    height: 90px;  
+    border-radius: 10%;
+    margin-right: 1rem;
+}
+
+nav {
+    position: relative;
+}
+
+.menu-icon {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+}
+
+nav ul.active {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.course-card {
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #fff;
+}
+.container-grid{
+    margin: 1rem;
+}
+
+.container-grid div{
+    box-shadow: #202327 0px 0px 10px;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.certificates{
+    box-shadow: #202327 0px 0px 10px;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.course-work ul{
+    text-align: center;
+    width: 90%;
+}
+
+.course-work ul li{
+    text-align: left;
+    width:100%;
+}
+
+.course-card.completed {
+    background-color: #352917;
+}
+
+.course-card.not-completed {
+    background-color: #a16a3d;
+}
+
+
+.certificates{
+    text-align: center;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    min-width: 15%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #444;
+    border: none;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #202327;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    background-color: #333;
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.mid-h2{
+    margin-top: 0;
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem 0;
+}

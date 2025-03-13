@@ -65,4 +65,11 @@
         width:95%;
         margin: 0 auto;
     }
+
+    .vic-falls img{
+        width: 90%;
+        height: 90%;
+        border-radius: 10%;
+        margin: auto;
+    }
 }

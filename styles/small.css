@@ -1,9 +1,20 @@
+/* Color Scheme */
+:root {
+    --primary-color: #684a11;
+    --secondary-color: #444;
+    --tertiary-color: #333;
+    --background-color: #f5f5f5;
+    --text-color: #fff;
+    --muted-color: #ccc;
+    --box-shadow-color: #202327;
+}
+
 /* Basic styles for smaller screens */
 body {
     font-family: 'Merriweather', serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
 }
 
 h1, h2 {
@@ -13,8 +24,8 @@ h1, h2 {
 header {
     display: flex;
     align-items: center;
-    background-color: #333;
-    color: white;
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
     padding: 1rem;
 }
 
@@ -25,7 +36,7 @@ header img {
     margin-right: 1rem;
 }
 
-.aside-img{
+.aside-img {
     width: 90px;
     height: 90px;  
     border-radius: 10%;
@@ -41,7 +52,7 @@ nav {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: white;
+    color: var(--text-color);
     margin: 0.5rem;
     cursor: pointer;
 }
@@ -51,7 +62,7 @@ nav ul {
     padding: 0;
     display: none;
     flex-direction: column;
-    background-color: #444;
+    background-color: var(--secondary-color);
 }
 
 nav ul.active {
@@ -59,7 +70,7 @@ nav ul.active {
 }
 
 nav a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     padding: 1rem;
     display: block;
@@ -70,8 +81,8 @@ main {
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
     text-align: center;
     padding: 1rem;
 }
@@ -80,35 +91,36 @@ footer {
     padding: 1rem;
     margin: 0.5rem 1rem;
     border-radius: 5px;
-    background-color: #eee;
-    color: #fff;
+    background-color: var(--muted-color);
+    color: var(--text-color);
 }
-.container-grid{
+
+.container-grid {
     margin: 1rem;
 }
 
-.container-grid div{
-    box-shadow: #202327 0px 0px 10px;
+.container-grid div {
+    box-shadow: var(--box-shadow-color) 0px 0px 10px;
     padding: 0.3rem;
     border-radius: 0.5rem;
     margin: 1rem;
     text-align: center;
 }
 
-.certificates{
-    box-shadow: #202327 0px 0px 10px;
+.certificates {
+    box-shadow: var(--box-shadow-color) 0px 0px 10px;
     padding: 0.3rem;
     border-radius: 0.5rem;
 }
 
-.course-work ul{
+.course-work ul {
     text-align: center;
     width: 90%;
 }
 
-.course-work ul li{
+.course-work ul li {
     text-align: left;
-    width:100%;
+    width: 100%;
 }
 
 .course-card.completed {
@@ -116,11 +128,11 @@ footer {
 }
 
 .course-card.not-completed {
-    background-color: #a16a3d;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
-
-.certificates{
+.certificates {
     text-align: center;
 }
 
@@ -132,8 +144,8 @@ footer {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
-    background-color: #444;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
     border: none;
     border-radius: 0.25rem;
     text-align: center;
@@ -143,24 +155,24 @@ footer {
 }
 
 .btn:hover {
-    background-color: #202327;
+    background-color: var(--box-shadow-color);
     transform: scale(1.05);
 }
 
 .btn:active {
-    background-color: #333;
+    background-color: var(--tertiary-color);
 }
 
 .btn:disabled {
-    background-color: #ccc;
+    background-color: var(--muted-color);
     cursor: not-allowed;
 }
 
-.mid-h2{
+.mid-h2 {
     margin-top: 0;
-    background-color: #333;
+    background-color: var(--tertiary-color);
     width: 100%;
-    color: #fff;
+    color: var(--text-color);
     text-align: center;
     padding: 0.75rem 0;
 }

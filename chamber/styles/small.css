@@ -56,6 +56,10 @@ header h1 {
     text-align: center;
 }
 
+main h1 {
+    text-align: center;
+}
+
 .hamburger {
     display: flex;
     flex-direction: column;

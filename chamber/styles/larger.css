@@ -10,13 +10,13 @@
         width: 100%;
     }
 
-    header span{
+    header div{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    header span .hamburger {
+   .hamburger {
         display: none;
     }
 

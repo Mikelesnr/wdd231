@@ -31,13 +31,13 @@ header {
     padding: 1rem;
 }
 
-header span {
+header div {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     justify-items: center;
 }
 
-header span button {
+header div button {
     margin-top: auto;
     margin-bottom: auto;
 }

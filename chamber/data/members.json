@@ -1,0 +1,53 @@
+{
+    "members": [
+        {
+            "name": "Acme Corporation",
+            "address": "123 Coronation ave, Harare, Zimbabwe",
+            "phone": "263-123-4567",
+            "website": "http://www.acme.com",
+            "image": "../images/acme.png"
+        },
+        {
+            "name": "Warner Bros",
+            "address": "456 Greendale Ave, Harare, Zimbabwe",
+            "phone": "263-234-5678",
+            "website": "http://www.warnerbros.com",
+            "image": "../images/warner.png"
+        },
+        {
+            "name": "Stark Enterprises",
+            "address": "789 Cunningham Rd, Harare, Zimbabwe",
+            "phone": "263-345-6789",
+            "website": "http://www.starkenterprises.com",
+            "image": "../images/stark.jpeg"
+        },
+        {
+            "name": "Wayne Tech",
+            "address": "101 Drew Road, Harare, Zimbabwe",
+            "phone": "263-456-7890",
+            "website": "http://www.waynetech.com",
+            "image": "../images/wayne.jpeg"
+        },
+        {
+            "name": "LexCorp",
+            "address": "202 Five Avenue, Harare, Zimbabwe",
+            "phone": "263-567-8901",
+            "website": "http://www.lexcorp.com",
+            "image": "../images/lexcorp.png"
+        },
+        {
+            "name": "Umbrella Corporation",
+            "address": "303 Enterprise Rd, Harare, Zimbabwe",
+            "phone": "263-678-9012",
+            "website": "http://www.umbrella.com",
+            "image": "../images/umbrella.jpeg"
+        },
+        {
+            "name": "Cyberdyne Systems",
+            "address": "404 Samora Machel, Harare, Zimbabwe",
+            "phone": "263-789-0123",
+            "website": "http://www.cyberdyne.com",
+            "image": "../images/cyberdyne.png"
+        }
+    ]
+}

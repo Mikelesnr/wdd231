@@ -42,7 +42,7 @@ header span button {
     margin-bottom: auto;
 }
 
-header img {
+#logo {
     width: 50px;
     height: 50px;  
     border-radius: 50%;

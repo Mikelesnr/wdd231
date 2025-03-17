@@ -51,11 +51,11 @@ header span button {
     margin-bottom: auto;
 }
 
-header h1 {
+header h2 {
     flex-grow: 1;
     text-align: center;
 }
-header h1 span{
+header h2 span{
     display: block;
     font-size: 12px;
 }

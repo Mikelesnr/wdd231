@@ -56,13 +56,6 @@ header h1 {
     text-align: center;
 }
 
-header h1 .span-small {
-    display: none;
-}
-header h1 .span-big {
-    display: block;
-}
-
 .hamburger {
     display: flex;
     flex-direction: column;

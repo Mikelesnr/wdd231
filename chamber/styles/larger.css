@@ -14,17 +14,6 @@
         display: none;
     }
 
-    header h1 .span-small{
-        display: flex;
-        flex-direction: row;
-        align-items: center; 
-    }
-
-    
-    header h1 .span-big {
-        display: none;
-    }
-
     nav {
         padding: 0;
         background-color: transparent;

@@ -18,6 +18,7 @@
     <script defer src="scripts/navigation.js"></script>
     <script defer src="scripts/date.js"></script>
     <script defer src="scripts/course.js"></script>
+    <script defer src="scripts/weather.js"></script>
   </head>
 
   <body>
@@ -29,7 +30,7 @@
       <button class="menu-icon">☰</button>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="chamber.html">Chamber</a></li>
+        <li><a href="chamber/directory.html">Chamber</a></li>
         <li>
           <a href="https://github.com/Mikelesnr" target="_blank" rel="noopener"
             >GitHub Profile</a
@@ -53,7 +54,8 @@
             <li></li>
           </ul>
         </div>
-        <div class="vic-falls">
+        <aside class="vic-falls">
+          <div>
           <h2 class="mid-h2">Vic Falls, Zimbabwe</h2>
           <img
             src="images/victoria-falls.jpg"
@@ -61,6 +63,14 @@
             alt="Water Fall">
           <p>Water Fall</p>
         </div>
+        <div class="weather">
+          <p>The current temperature in Harare, Zimbabwe is <span id="current-temp"></span></p>
+  <figure>
+    <img id="weather-icon" src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+        </div>
+        </aside>
       </section>
       <section class="certificates">
         <h2 class="mid-h2">Web and Computer Programming Certificate</h2>

@@ -51,12 +51,46 @@
             <p></p>
           </div>
         </header>
-    <main>
-        <h1>Chamber of Commerce Directory</h1>
-        <section class="directory">
-            <!-- Member cards or list will be dynamically inserted here -->
-        </section>
-    </main>
+  
+        <main>
+          <h1>Home</h1>
+          <section class="container-grid">
+            <div class="course-work">
+              <h2 class="mid-h2">Course Work</h2>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="vic-falls">
+              <h2 class="mid-h2">Vic Falls, Zimbabwe</h2>
+              <img src="images/victoria-falls.jpg" class="aside-img" alt="Water Fall">
+              <p>Water Fall</p>
+            </div>
+          </section>
+          <section class="weather-card">
+            <h2>Weather in Harare</h2>
+            <div class="weather-info">
+              <p>Current temperature: <span id="current-temp"></span></p>
+              <figure>
+                <img id="weather-icon" src="" alt="Weather icon">
+                <figcaption id="weather-desc"></figcaption>
+              </figure>
+            </div>
+          </section>
+          <section class="certificates">
+            <h2 class="mid-h2">Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+              <button class="btn" onclick="filterCourses('all')">All</button>
+              <button class="btn" onclick="filterCourses('CSE')">CSE</button>
+              <button class="btn" onclick="filterCourses('WDD')">WDD</button>
+            </div>
+            <div class="courses"></div>
+          </section>
+        </main>
+       
+    
     <footer>
         <p>Contact Information: Your Contact Info</p>
         <p>WDD 231 | Last Modified: <span id="last-modified"></span></p>

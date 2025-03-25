@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harare Chamber of Commerce Directory Page. A list of all the members of the Chamber of Commerce.">
+    <meta name="author" content="Michael Ngonidzashe Mwanza">
+    <meta name="keywords" content="Chamber of Commerce, Directory, Business, Members">
+    <title>Chamber of Commerce Directory</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Harare Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://mikelesnr.github.io/wdd231/chamber/directory.html">
+    <script defer src="scripts/script.js"></script>
+    <script defer src="scripts/nav.js"></script>
+    <script defer src="scripts/weather.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-header">        
+            <div class="header-logo">
+              <a href="index.html"><img id="logo" src="./images/logo.png" alt="Teton Chamber of Commerce Logo"></a>            
+            </div>          
+            <div class="header-title">
+              <h1>Harare</h1>
+              <h2>Chamber of Commerce</h2>
+            </div>
+            <div class="header-icons">
+                <a href="https://www.google.com/maps/place/Harare/@-17.8163613,30.7271987,71963m/data=!3m2!1e3!4b1!4m6!3m5!1s0x1931a4ee1bdddb35:0xa5143b9be5134f2f!8m2!3d-17.8262928!4d31.0503723!16zL20vMGZuZ2Y?entry=ttu&g_ep=EgoyMDI1MDMxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener"><img src="./images/google-maps-40.png" alt="instagram logo"></a>
+                <a href="https://www.pinterest.com/inspirationofzw/harare-city-zimbabwe/" target="_blank" rel="noopener"><img src="./images/pinterest-40.png" alt="pintrest logo"></a>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+              </div>
+            </div>
+            <nav class="nav">
+              <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+              </ul>
+            </nav>
+            <div class="header-today">
+              <p></p>
+          </div>
+        </header>
+        <main>
+          <section id="home-hero" class="hero">
+            <h2>Welcome to our Beautiful City!</h2>
+            <a href="join.html" class="a-button">Join Us</a>
+          </section>
+          <h1>Home</h1>
+           <div class="main-content">
+            <!-- current evemts-->
+             <section class="current-events">
+                 <h2 class="mid-h2">Harare Agricultural Show</h2>
+                <img id="agric-show-img" src="images/agric-show.jpeg" alt="Harare Agricultural Show image">
+                <p>The Harare Agricultural Show is Zimbabwe's largest annual event celebrating agriculture, innovation, and community. Join us for an exciting week filled with exhibitions, livestock displays, live performances, and networking opportunities. Discover the latest in agricultural advancements, enjoy local cuisine, and connect with farmers and industry leaders. Don't miss this vibrant showcase of Zimbabwe's agricultural heritage and future!</p>
+
+          </section>
+          <!-- weather -->
+          <section class="weather-card">
+            <h2>Weather in Harare</h2>
+            <div class="weather-info">
+              <p>Current temperature: <span id="current-temp"></span></p>
+              <figure>
+                <img id="weather-icon" src="" alt="Weather icon">
+                <figcaption id="weather-desc"></figcaption>
+              </figure>
+            </div>
+          </section>
+        </div>
+          <section class="spotlight">
+            <!-- Member cards or list will be dynamically inserted here -->
+          </section>
+        </main>
+       
+    
+    <footer>
+        <p>Contact Information: Your Contact Info</p>
+        <p>WDD 231 | Last Modified: <span id="last-modified"></span></p>
+        <p>&copy; <span id="current-year"></span> Michael Mwanza</p>
+    </footer>
+</body>
+</html>

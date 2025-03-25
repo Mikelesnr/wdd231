@@ -186,8 +186,21 @@ footer {
     right: 0.75rem;
 }
 
+.vic-falls{
+    width: 100%;
+    margin: 0 auto;
+}
+
 .vic-falls img{
-    width: 60%;
-    height: 60%;
+    width: 90%;
+    height: auto;
     border-radius: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weather{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0;
 }

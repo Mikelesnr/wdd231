@@ -19,27 +19,39 @@ body {
 
 h1, h2 {
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+header, footer{
     background-color: var(--tertiary-color);
-    color: var(--text-color);
-    padding: 1rem;
+    border: 1px black solid;
+    margin-bottom: 0%;   
 }
 
-header div {
+.weather-card{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.top-header {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
     justify-items: center;
-}
+    text-align: center;
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+  }
 
 header div button {
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.header-today p{
+    color: var(--text-color);
+    text-align: center;
 }
 
 #logo {
@@ -55,16 +67,58 @@ header h2 {
     flex-grow: 1;
     text-align: center;
 }
-header h2 span{
-    display: block;
-    font-size: 12px;
+
+main {
+    padding: 0;
 }
+/* Styling for the hero section */
+#home-hero {
+    margin-top: 0;
+    background-image: url('/chamber/images/harare.jpg'); /* Replace 'your-image.jpg' with your image file path */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: var(--text-color); 
+    padding: 50px 20px;
+    text-align: center; /* Center the text inside the section */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow */
 
+  }  
+  
+  /* Styling for the heading */
+  .hero h2 {
+    font-size: 2.5em; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    position: relative; 
+    z-index: 2; 
+    color: #fff; 
+    background-color: rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1rem;
+  }
 
-main h1 {
-    text-align: center;
-}
-
+  
+  /* Styling for the button link */
+  .hero .a-button {
+    display: inline-block; /* Button-like appearance */
+    background-color: #0078d4; /* A vibrant blue color */
+    color: #fff; /* White text for contrast */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Add padding for size */
+    border-radius: 5px; /* Round edges */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-size: 1em; /* Comfortable font size */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for the button */
+  #home-hero .a-button:hover {
+    background-color: #005ea2; /* Darker blue on hover */
+  }
+  
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -81,7 +135,16 @@ main h1 {
     height: 3px;
     background-color: var(--text-color);
 }
-
+@media (max-width: 768px) {
+    .header-icons a{
+        display: none;
+    }
+    .nav{
+        width:90% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 nav {
     background-color: var(--secondary-color);
     padding: 1rem;
@@ -103,9 +166,6 @@ nav a {
     text-decoration: none;
 }
 
-main {
-    padding: 1rem;
-}
 
 .directory {
     display: grid;
@@ -144,6 +204,43 @@ footer {
     bottom: 0;
 }
 
+#agric-show-img{
+    margin: 1rem auto 1rem;
+}
+
+.current-events{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.main-content h2{
+    background-color: var(--tertiary-color);
+    padding: 0.5rem;
+    margin-top: 0%;
+}
+
+.current-events p{
+    padding: 1rem;
+}
+
+.spotlight{
+ padding: 1rem;
+ text-align: center;
+}
+
+.spotlight div{
+    margin-top: 1rem;
+    background-color: #684a11;
+    padding: 1rem;
+    columns: var(--text-color);
+}
+
+.spotlight div a{
+    color: #fff;
+}
+
 .hidden {
     display: none;
 }
+

@@ -74,7 +74,7 @@ main {
 /* Styling for the hero section */
 #home-hero {
     margin-top: 0;
-    background-image: url('/chamber/images/harare.jpg');
+    background-image: url('../images/harare.jpg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;

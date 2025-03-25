@@ -240,6 +240,27 @@ footer {
     color: #fff;
 }
 
+.call-to-action{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+.call-to-action a{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 80%;
+}
+
+.call-to-action a:hover{
+    background-color: var(--box-shadow-color);
+}
+
 .hidden {
     display: none;
 }

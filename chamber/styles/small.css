@@ -251,6 +251,18 @@ footer {
     background-color: var(--box-shadow-color);
 }
 
+.list div, .list a{
+    color: var(--text-color);
+}
+
+.list div:nth-child(odd) {
+    background-color: var(--primary-color); 
+  }
+  
+  .list div:nth-child(even) {
+    background-color: var(--secondary-color); 
+  }
+  
 @media (max-width: 768px) {
     .header-icons a{
         display: none;
@@ -272,8 +284,54 @@ footer {
     #home-hero{
         border-radius: 0%;
     }
+
+    .list div{
+        padding: 0.75rem;
+        margin: 0 1rem 1rem;
+    }
+
+    .directory{
+        margin-bottom: 1rem;
+    }
+
+    .directory div{
+        margin: 0 1rem 1rem;
+    }
+
+    .weather-card{
+        padding-bottom: 0.5rem;
+    }
 }
+
+.directory-btns{
+ display: flex;
+ flex-direction: row;
+ text-align: center;
+ justify-content: center;
+}
+
+.directory-btn{
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10%;
+    width: 6rem
+}
+
+.directory-btn:hover{
+    background-color: var(--box-shadow-color);
+    color: var(--muted-color);
+}
+
+.directory-btn{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.btn-active{
+    background-color: var(--primary-color);
+}
+
 .hidden {
-    display: none;
+    display: none !important;
 }
 

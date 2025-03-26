@@ -98,6 +98,11 @@
     }
 }
 
+#h2-top{
+    font-size: xx-large;
+    text-align: center;
+}
+
 .hidden {
     display: none !important;
 }

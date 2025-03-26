@@ -1,38 +1,9 @@
 const dateParagraph = document.querySelector(".header-today p");
 const directory = document.querySelector(".directory");
 const directoryList = document.querySelector(".list");
+const spotlight = document.getElementById('spotlight');
 const gridBtn = document.getElementById("grid")
 const listBtn = document.getElementById("list")
-
-gridBtn.addEventListener('click', ()=>{
-    if (!gridBtn.classList.contains('btn-active')) {
-        gridBtn.classList.add('btn-active');
-      }
-    if (directory.classList.contains('hidden')) {
-        directory.classList.remove('hidden');
-      }
-      if (!directoryList.classList.contains('hidden')) {
-        directoryList.classList.add('hidden');
-      }
-      if (listBtn.classList.contains('btn-active')) {
-        listBtn.classList.remove('btn-active');
-      }
-})
-
-listBtn.addEventListener('click', ()=>{
-    if (gridBtn.classList.contains('btn-active')) {
-        gridBtn.classList.remove('btn-active');
-      }
-    if (!directory.classList.contains('hidden')) {
-        directory.classList.add('hidden');
-      }
-      if (directoryList.classList.contains('hidden')) {
-        directoryList.classList.remove('hidden');
-      }
-      if (!listBtn.classList.contains('btn-active')) {
-        listBtn.classList.add('btn-active');
-      }
-})
 
 document.addEventListener("DOMContentLoaded", () => {
   // Display the current year in the footer
@@ -64,26 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => {
       data.members.forEach((member) => {
-        const memberCard = document.createElement("div");
-        memberCard.classList.add("member-list");
-        memberCard.innerHTML = `
+        const memberList = document.createElement("div");
+        memberList.classList.add("member-list");
+        memberList.innerHTML = `
                     <p>${member.name}</p>
                     <p>${member.address}</p>
                     <p>${member.phone}</p>
                     <p><a href="${member.website}" target="_blank">Visit Website</a></p>
                     `;
-        directoryList.appendChild(memberCard);
+
+        if(data){
+        directoryList.appendChild(memberList);
+        }
       });
     });
 
   fetch("data/members.json")
     .then((response) => response.json())
     .then((data) => {
-      const spotlight = document.querySelector(".spotlight");
       data.members.forEach((member) => {
-        const memberCard = document.createElement("div");
-        memberCard.classList.add("member-card");
-        memberCard.innerHTML = `
+        const card = document.createElement("div");
+        card.classList.add("member-card");
+       card.innerHTML = `
                     <h2>${member.name}</h2>
                     <img src="images/${member.image}" alt="${member.name}">
                     <p>${member.address}</p>
@@ -91,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="${member.website}" target="_blank">Visit Website</a>
                 `;
         if (member.membership === "gold") {
-          spotlight.appendChild(memberCard);
+          spotlight.appendChild(card);
         }
       });
     });
@@ -109,3 +82,33 @@ const formattedDate = currentDate.toLocaleDateString("en-US", {
 
 // Insert the formatted date into the <p> tag
 dateParagraph.textContent = formattedDate;
+
+gridBtn.addEventListener('click', ()=>{
+  if (!gridBtn.classList.contains('btn-active')) {
+      gridBtn.classList.add('btn-active');
+    }
+  if (directory.classList.contains('hidden')) {
+      directory.classList.remove('hidden');
+    }
+    if (!directoryList.classList.contains('hidden')) {
+      directoryList.classList.add('hidden');
+    }
+    if (listBtn.classList.contains('btn-active')) {
+      listBtn.classList.remove('btn-active');
+    }
+})
+
+listBtn.addEventListener('click', ()=>{
+  if (gridBtn.classList.contains('btn-active')) {
+      gridBtn.classList.remove('btn-active');
+    }
+  if (!directory.classList.contains('hidden')) {
+      directory.classList.add('hidden');
+    }
+    if (directoryList.classList.contains('hidden')) {
+      directoryList.classList.remove('hidden');
+    }
+    if (!listBtn.classList.contains('btn-active')) {
+      listBtn.classList.add('btn-active');
+    }
+})

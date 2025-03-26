@@ -222,7 +222,7 @@ footer {
     margin-top: 1rem;
     background-color: #684a11;
     padding: 1rem;
-    columns: var(--text-color);
+    color: var(--text-color);
 }
 
 .spotlight div a{

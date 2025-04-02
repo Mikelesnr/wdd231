@@ -46,7 +46,7 @@
             "phone": "263-678-9012",
             "website": "http://www.umbrella.com",
             "image": "../images/umbrella.jpeg",
-            "membership":"silver"
+            "membership":"bronze"
         },
         {
             "name": "Cyberdyne Systems",
@@ -54,7 +54,7 @@
             "phone": "263-789-0123",
             "website": "http://www.cyberdyne.com",
             "image": "../images/cyberdyne.png",
-            "membership":"silver"
+            "membership":"none-profit"
         }
     ]
 }

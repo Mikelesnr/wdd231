@@ -87,12 +87,6 @@
         padding: 2rem;
     }
 
-    .main-content{
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 2rem;
-    }
-
     .hero .a-button {
         width: 30%;
     }
@@ -104,7 +98,15 @@
     .forecast ul{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 1300px) {
+    .main-content{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2rem;
     }
 }
 

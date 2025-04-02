@@ -96,6 +96,16 @@
     .hero .a-button {
         width: 30%;
     }
+
+    .forecast li{
+        width:30%;
+    }
+
+    .forecast ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 #h2-top{

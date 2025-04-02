@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harare Chamber of Commerce Directory Page. A list of all the members of the Chamber of Commerce.">
-    <meta name="author" content="Michael Ngonidzashe Mwanza">
+    <meta name="description" content="Harare Chamber of Commerce Join Page. the signup page for the Harare Chamber of Commerce.">
+    <meta name="author" content="Michael Mwanza">
     <meta name="keywords" content="Chamber of Commerce, Directory, Business, Members">
-    <title>Chamber of Commerce join</title>
+    <title>Join the Harare Chamber of Commerce</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
@@ -52,41 +52,40 @@
           </div>
         </header>
     <main>
+      <h1>Join the Harare Chamber of Commerce</h1>
       <section>
-        <h1>Join the Harare Chamber of Commerce</h1>
         <form method="get" action="thankyou.html">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" title="Enter your first name" autocomplete="given-name" required>
-
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" title="Enter your last name" autocomplete="family-name" required>
-
-            <label for="org-title">Organizational Title:</label>
-            <input type="text" id="org-title" name="org-title" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z-\s]{7,}" required>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@email.com" required>
-
-            <label for="phone">Mobile Phone Number:</label>
-            <input type="tel" id="phone" name="phone" title="Enter your phone number" autocomplete="tel" required>
-
-            <label for="organization">Business/Organization Name:</label>
-            <input type="text" id="organization" name="organization" title="Enter your organization's name" autocomplete="organization" required>
-
-            <label for="membership">Membership Level:</label>
-            <select id="membership" name="membership" title="Select your membership level">
-                <option value="np">Non-Profit Membership</option>
-                <option value="bronze">Bronze Membership</option>
-                <option value="silver">Silver Membership</option>
-                <option value="gold">Gold Membership</option>
-            </select>
-
-            <label for="description">Business/Organization Description:</label>
-            <textarea id="description" name="description" title="Enter a description of your business/organization"></textarea>
-
-            <input type="hidden" id="timestamp" name="timestamp" value="">
-            
-            <button type="submit">Submit Application</button>
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first-name" title="Enter your first name" autocomplete="given-name" required>
+          
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" name="last-name" title="Enter your last name" autocomplete="family-name" required>
+          
+          <label for="org-title">Organizational Title:</label>
+          <input type="text" id="org-title" name="org-title" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z-\s]{7,}" required>
+          
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@email.com" required>
+          
+          <label for="phone">Mobile Phone Number:</label>
+          <input type="tel" id="phone" name="phone" title="Enter your phone number" autocomplete="tel" required>
+          
+          <label for="organization">Business/Organization Name:</label>
+          <input type="text" id="organization" name="organization" title="Enter your organization's name" autocomplete="organization" required>
+          
+          <label for="membership">Membership Level:</label>
+          <select id="membership" name="membership" title="Select your membership level">
+              <option value="np">Non-Profit Membership</option>
+              <option value="bronze">Bronze Membership</option>
+              <option value="silver">Silver Membership</option>
+              <option value="gold">Gold Membership</option>
+          </select>
+          
+          <label for="description">Business/Organization Description:</label>
+          <textarea id="description" name="description" title="Enter a description of your business/organization"></textarea>
+          
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+          <button type="submit">Submit Application</button>          
         </form>
     </section>
     <section class="membership-cards">

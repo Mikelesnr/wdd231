@@ -481,6 +481,21 @@ form button:focus {
 }
 
 .thank-you .home-btn:hover {
-    background-color: #005fa3;
+    background-color: var(--secondary-color);
     transform: scale(1.05);
+}
+
+.membership-cards article {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -1,9 +1,4 @@
 const dateParagraph = document.querySelector(".header-today p");
-const directory = document.querySelector(".directory");
-const directoryList = document.querySelector(".list");
-const spotlight = document.getElementById('spotlight');
-const gridBtn = document.getElementById("grid")
-const listBtn = document.getElementById("list")
 
 document.addEventListener("DOMContentLoaded", () => {
   // Display the current year in the footer
@@ -13,102 +8,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // Display the last modified date in the footer
   document.getElementById("last-modified").textContent = document.lastModified;
 
-  // Fetch and display member data (example JSON fetch)
-  fetch("data/members.json")
-    .then((response) => response.json())
-    .then((data) => {
-      data.members.forEach((member) => {
-        const memberCard = document.createElement("div");
-        memberCard.classList.add("member-card");
-        memberCard.innerHTML = `
-                    <img src="images/${member.image}" alt="${member.name}">
-                    <h2>${member.name}</h2>
-                    <p>${member.address}</p>
-                    <p>${member.phone}</p>
-                    <a href="${member.website}" target="_blank">Visit Website</a>
-                `;
-        directory.appendChild(memberCard);
-      });
-    });
-
-  fetch("data/members.json")
-    .then((response) => response.json())
-    .then((data) => {
-      data.members.forEach((member) => {
-        const memberList = document.createElement("div");
-        memberList.classList.add("member-list");
-        memberList.innerHTML = `
-                    <p>${member.name}</p>
-                    <p>${member.address}</p>
-                    <p>${member.phone}</p>
-                    <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                    `;
-
-        if(data){
-        directoryList.appendChild(memberList);
-        }
-      });
-    });
-
-  fetch("data/members.json")
-    .then((response) => response.json())
-    .then((data) => {
-      data.members.forEach((member) => {
-        const card = document.createElement("div");
-        card.classList.add("member-card");
-       card.innerHTML = `
-                    <h2>${member.name}</h2>
-                    <img src="images/${member.image}" alt="${member.name}">
-                    <p>${member.address}</p>
-                    <p>${member.phone}</p>
-                    <a href="${member.website}" target="_blank">Visit Website</a>
-                `;
-        if (member.membership === "gold") {
-          spotlight.appendChild(card);
-        }
-      });
-    });
-});
+})
 
 // Get the current date
 const currentDate = new Date();
 
 // Format the date
 const formattedDate = currentDate.toLocaleDateString("en-US", {
-  month: "long",
-  day: "numeric",
-  year: "numeric",
+month: "long",
+day: "numeric",
+year: "numeric",
 });
 
 // Insert the formatted date into the <p> tag
 dateParagraph.textContent = formattedDate;
 
-gridBtn.addEventListener('click', ()=>{
-  if (!gridBtn.classList.contains('btn-active')) {
-      gridBtn.classList.add('btn-active');
-    }
-  if (directory.classList.contains('hidden')) {
-      directory.classList.remove('hidden');
-    }
-    if (!directoryList.classList.contains('hidden')) {
-      directoryList.classList.add('hidden');
-    }
-    if (listBtn.classList.contains('btn-active')) {
-      listBtn.classList.remove('btn-active');
-    }
-})
+// modal management
+// Function to open the dialog modal
+function openDialog(dialogId) {
+  const dialog = document.getElementById(dialogId);
+  dialog.showModal(); // Opens the <dialog> element as a modal
+}
 
-listBtn.addEventListener('click', ()=>{
-  if (gridBtn.classList.contains('btn-active')) {
-      gridBtn.classList.remove('btn-active');
-    }
-  if (!directory.classList.contains('hidden')) {
-      directory.classList.add('hidden');
-    }
-    if (directoryList.classList.contains('hidden')) {
-      directoryList.classList.remove('hidden');
-    }
-    if (!listBtn.classList.contains('btn-active')) {
-      listBtn.classList.add('btn-active');
-    }
-})
+// Function to close the dialog modal
+function closeDialog(dialogId) {
+  const dialog = document.getElementById(dialogId);
+  dialog.close(); // Closes the <dialog> element
+}

@@ -6,7 +6,7 @@
     <meta name="description" content="Harare Chamber of Commerce Directory Page. A list of all the members of the Chamber of Commerce.">
     <meta name="author" content="Michael Ngonidzashe Mwanza">
     <meta name="keywords" content="Chamber of Commerce, Directory, Business, Members">
-    <title>Chamber of Commerce Directory</title>
+    <title>Chamber of Commerce join</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
@@ -51,44 +51,84 @@
             <p></p>
           </div>
         </header>
-        <main>
-          
-          <section class="container-grid">
-            <div class="course-work">
-              <h2 class="mid-h2">Course Work</h2>
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-            <div class="vic-falls">
-              <h2 class="mid-h2">Vic Falls, Zimbabwe</h2>
-              <img src="images/victoria-falls.jpg" class="aside-img" alt="Water Fall">
-              <p>Water Fall</p>
-            </div>
-          </section>
-          <section class="weather-card">
-            <h2>Weather in Harare</h2>
-            <div class="weather-info">
-              <p>Current temperature: <span id="current-temp"></span></p>
-              <figure>
-                <img id="weather-icon" src="" alt="Weather icon">
-                <figcaption id="weather-desc"></figcaption>
-              </figure>
-            </div>
-          </section>
-          <section class="certificates">
-            <h2 class="mid-h2">Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-              <button class="btn" onclick="filterCourses('all')">All</button>
-              <button class="btn" onclick="filterCourses('CSE')">CSE</button>
-              <button class="btn" onclick="filterCourses('WDD')">WDD</button>
-            </div>
-            <div class="courses"></div>
-          </section>
-        </main>
-       
+    <main>
+      <section>
+        <h1>Join the Harare Chamber of Commerce</h1>
+        <form method="get" action="thankyou.html">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" title="Enter your first name" autocomplete="given-name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" title="Enter your last name" autocomplete="family-name" required>
+
+            <label for="org-title">Organizational Title:</label>
+            <input type="text" id="org-title" name="org-title" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z-\s]{7,}" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@email.com" required>
+
+            <label for="phone">Mobile Phone Number:</label>
+            <input type="tel" id="phone" name="phone" title="Enter your phone number" autocomplete="tel" required>
+
+            <label for="organization">Business/Organization Name:</label>
+            <input type="text" id="organization" name="organization" title="Enter your organization's name" autocomplete="organization" required>
+
+            <label for="membership">Membership Level:</label>
+            <select id="membership" name="membership" title="Select your membership level">
+                <option value="np">Non-Profit Membership</option>
+                <option value="bronze">Bronze Membership</option>
+                <option value="silver">Silver Membership</option>
+                <option value="gold">Gold Membership</option>
+            </select>
+
+            <label for="description">Business/Organization Description:</label>
+            <textarea id="description" name="description" title="Enter a description of your business/organization"></textarea>
+
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+            
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+    <section class="membership-cards">
+      <article>
+          <h2>Non-Profit Membership</h2>
+          <button onclick="openDialog('np-dialog')">Learn More</button>
+          <dialog id="np-dialog">
+              <h3>Non-Profit Membership Benefits</h3>
+              <p>Special events for non-profits, priority training access, and no membership fee!</p>
+              <button onclick="closeDialog('np-dialog')">Close</button>
+          </dialog>
+      </article>
+      <article>
+          <h2>Bronze Membership</h2>
+          <button onclick="openDialog('bronze-dialog')">Learn More</button>
+          <dialog id="bronze-dialog">
+              <h3>Bronze Membership Benefits</h3>
+              <p>Event discounts, networking opportunities, and a bronze-level homepage spotlight.</p>
+              <button onclick="closeDialog('bronze-dialog')">Close</button>
+          </dialog>
+      </article>
+      <article>
+          <h2>Silver Membership</h2>
+          <button onclick="openDialog('silver-dialog')">Learn More</button>
+          <dialog id="silver-dialog">
+              <h3>Silver Membership Benefits</h3>
+              <p>All Bronze perks, premium event discounts, exclusive workshops, and advertising opportunities.</p>
+              <button onclick="closeDialog('silver-dialog')">Close</button>
+          </dialog>
+      </article>
+      <article>
+          <h2>Gold Membership</h2>
+          <button onclick="openDialog('gold-dialog')">Learn More</button>
+          <dialog id="gold-dialog">
+              <h3>Gold Membership Benefits</h3>
+              <p>All Silver perks, VIP privileges, advanced advertising, and high-level networking invitations.</p>
+              <button onclick="closeDialog('gold-dialog')">Close</button>
+          </dialog>
+      </article>
+  </section>
+  
+    </main>
     
     <footer>
         <p>Contact Information: Your Contact Info</p>

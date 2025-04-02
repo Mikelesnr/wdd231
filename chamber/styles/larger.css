@@ -103,6 +103,10 @@
     text-align: center;
 }
 
+.btn-active{
+    background-color: var(--primary-color) !important;
+}
+
 .hidden {
     display: none !important;
 }

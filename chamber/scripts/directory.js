@@ -11,7 +11,7 @@ const listBtn = document.getElementById("list")
      const memberCard = document.createElement("div");
      memberCard.classList.add("member-card");
      memberCard.innerHTML = `
-                 <img src="images/${member.image}" alt="${member.name}">
+                 <img loading="lazy" src="images/${member.image}" alt="${member.name}">
                  <h2>${member.name}</h2>
                  <p>${member.address}</p>
                  <p>${member.phone}</p>

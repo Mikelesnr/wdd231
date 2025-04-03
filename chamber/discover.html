@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harare Chamber of Commerce Directory Page. A list of all the members of the Chamber of Commerce.">
+    <meta name="description" content="Harare Chamber of Commerce Discover Page. This page contains information about the city of harare.">
     <meta name="author" content="Michael Ngonidzashe Mwanza">
-    <meta name="keywords" content="Chamber of Commerce, Directory, Business, Members">
-    <title>Chamber of Commerce Directory</title>
+    <meta name="keywords" content="Chamber of Commerce, Discover, Business, Members">
+    <title>Discover Harare</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
@@ -51,46 +51,138 @@
             <p></p>
           </div>
         </header>
-  
         <main>
-          <h1>Home</h1>
-          <section class="container-grid">
-            <div class="course-work">
-              <h2 class="mid-h2">Course Work</h2>
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-            <div class="vic-falls">
-              <h2 class="mid-h2">Vic Falls, Zimbabwe</h2>
-              <img src="images/victoria-falls.jpg" class="aside-img" alt="Water Fall">
-              <p>Water Fall</p>
-            </div>
+          <h1>Discover Harare</h1>
+          <section class="places-grid">
+              <!-- Mkwisi Woodlands -->
+              <article class="place-card">
+                  <h2>Mkwisi Woodlands</h2>
+                  <figure>
+                      <img loading="lazy" src="images/mkuvisi-woodlands.jpeg" alt="Mkwisi Woodlands">
+                  </figure>
+                  <address>Mkwisi Woodlands, Harare</address>
+                  <p>Explore the serene beauty of Harare's Mkwisi Woodlands, perfect for picnics and nature walks.</p>
+                  <button onclick="openDialog('mkwisi-woodlands')">Learn More</button>
+                  <dialog id="mkwisi-woodlands" class="discover-dialog">
+                      <h3>Mkwisi Woodlands</h3>
+                      <p>Mkwisi Woodlands offers a peaceful retreat within Harare. With lush greenery and scenic trails, it's a haven for families, picnics, and adventurers alike.</p>
+                      <button onclick="closeDialog('mkwisi-woodlands')">Close</button>
+                  </dialog>
+              </article>
+      
+              <!-- Cleveland Dam -->
+              <article class="place-card">
+                  <h2>Cleveland Dam</h2>
+                  <figure>
+                      <img loading="lazy" src="images/cleaveland-dam.jpeg" alt="Cleveland Dam">
+                  </figure>
+                  <address>Cleveland Dam, Harare</address>
+                  <p>A scenic reservoir offering tranquil views and recreational activities.</p>
+                  <button onclick="openDialog('cleveland-dam')">Learn More</button>
+                  <dialog id="cleveland-dam" class="discover-dialog">
+                      <h3>Cleveland Dam</h3>
+                      <p>Cleveland Dam provides breathtaking views, a variety of bird species, and outdoor activities like fishing, hiking, and serene boating experiences.</p>
+                      <button onclick="closeDialog('cleveland-dam')">Close</button>
+                  </dialog>
+              </article>
+      
+              <!-- Africa Unity Square -->
+              <article class="place-card">
+                  <h2>Africa Unity Square</h2>
+                  <figure>
+                      <img loading="lazy" src="images/africa-unity-square.jpg" alt="Africa Unity Square">
+                  </figure>
+                  <address>Nelson Mandela Avenue, Harare</address>
+                  <p>A historic park in the heart of Harare, known for its fountains and flower vendors.</p>
+                  <button onclick="openDialog('africa-unity-square')">Learn More</button>
+                  <dialog id="africa-unity-square" class="discover-dialog">
+                      <h3>Africa Unity Square</h3>
+                      <p>This central square is a vibrant gathering spot adorned with fountains and gardens. It's a cultural hub celebrating Harare’s heritage and community spirit.</p>
+                      <button onclick="closeDialog('africa-unity-square')">Close</button>
+                  </dialog>
+              </article>
+      
+              <!-- Parliament Building -->
+              <article class="place-card">
+                  <h2>Parliament Building</h2>
+                  <figure>
+                      <img loading="lazy" src="images/Parliament-of-Zimbabwe.png" alt="Parliament Building">
+                  </figure>
+                  <address>Parliament Building, Harare</address>
+                  <p>An iconic structure symbolizing Zimbabwe's governance and history.</p>
+                  <button onclick="openDialog('parliament-building')">Learn More</button>
+                  <dialog id="parliament-building" class="discover-dialog">
+                      <h3>Parliament Building</h3>
+                      <p>The Parliament Building is a significant landmark in Harare, showcasing colonial architecture and hosting important government functions.</p>
+                      <button onclick="closeDialog('parliament-building')">Close</button>
+                  </dialog>
+              </article>
+      
+              <!-- Reserve Bank of Zimbabwe -->
+              <article class="place-card">
+                  <h2>Reserve Bank of Zimbabwe</h2>
+                  <figure>
+                      <img loading="lazy" src="images/reserve-bank-of-zim.jpeg" alt="Reserve Bank of Zimbabwe">
+                  </figure>
+                  <address>Reserve Bank of Zimbabwe, Harare</address>
+                  <p>The tallest building in Harare, showcasing modern architecture and economic significance.</p>
+                  <button onclick="openDialog('reserve-bank')">Learn More</button>
+                  <dialog id="reserve-bank" class="discover-dialog">
+                      <h3>Reserve Bank of Zimbabwe</h3>
+                      <p>This towering structure represents Harare’s economic resilience and houses vital financial institutions of national importance.</p>
+                      <button onclick="closeDialog('reserve-bank')">Close</button>
+                  </dialog>
+              </article>
+      
+              <!-- Cleveland Rifle Range -->
+              <article class="place-card">
+                  <h2>Cleveland Rifle Range</h2>
+                  <figure>
+                      <img loading="lazy" src="images/cleaveland-riffle-range.jpg" alt="Cleveland Rifle Range">
+                  </figure>
+                  <address>Cleveland Rifle Range, Harare</address>
+                  <p>A popular spot for shooting sports enthusiasts and outdoor activities.</p>
+                  <button onclick="openDialog('cleveland-rifle-range')">Learn More</button>
+                  <dialog id="cleveland-rifle-range" class="discover-dialog">
+                      <h3>Cleveland Rifle Range</h3>
+                      <p>Cleveland Rifle Range is the go-to destination for shooting practice and tournaments in a safe and controlled outdoor setting.</p>
+                      <button onclick="closeDialog('cleveland-rifle-range')">Close</button>
+                  </dialog>
+              </article>
+      
+              <!-- Sam Levy Village -->
+              <article class="place-card">
+                  <h2>Sam Levy Village</h2>
+                  <figure>
+                      <img loading="lazy" src="images/sam-levy-village.jpeg" alt="Sam Levy Village">
+                  </figure>
+                  <address>Sam Levy Village, Harare</address>
+                  <p>A vibrant shopping and entertainment hub in Harare's northern suburbs.</p>
+                  <button onclick="openDialog('sam-levy-village')">Learn More</button>
+                  <dialog id="sam-levy-village" class="discover-dialog">
+                      <h3>Sam Levy Village</h3>
+                      <p>This bustling hub combines high-end shopping, fine dining, and cultural entertainment, making it a favorite among locals and visitors.</p>
+                      <button onclick="closeDialog('sam-levy-village')">Close</button>
+                  </dialog>
+              </article>
+      
+              <!-- Harare Showgrounds -->
+              <article class="place-card">
+                  <h2>Harare Showgrounds</h2>
+                  <figure>
+                      <img loading="lazy" src="images/show-grounds-harare.jpeg" alt="Harare Showgrounds">
+                  </figure>
+                  <address>Harare Showgrounds, Harare</address>
+                  <p>The venue for the annual Harare Agricultural Show and other major events.</p>
+                  <button onclick="openDialog('harare-showgrounds')">Learn More</button>
+                  <dialog id="harare-showgrounds" class="discover-dialog">
+                      <h3>Harare Showgrounds</h3>
+                      <p>The Harare Showgrounds host Zimbabwe’s largest agricultural show, providing exhibitions, family fun, and cultural events.</p>
+                      <button onclick="closeDialog('harare-showgrounds')">Close</button>
+                  </dialog>
+              </article>
           </section>
-          <section class="weather-card">
-            <h2>Weather in Harare</h2>
-            <div class="weather-info">
-              <p>Current temperature: <span id="current-temp"></span></p>
-              <figure>
-                <img id="weather-icon" src="" alt="Weather icon">
-                <figcaption id="weather-desc"></figcaption>
-              </figure>
-            </div>
-          </section>
-          <section class="certificates">
-            <h2 class="mid-h2">Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-              <button class="btn" onclick="filterCourses('all')">All</button>
-              <button class="btn" onclick="filterCourses('CSE')">CSE</button>
-              <button class="btn" onclick="filterCourses('WDD')">WDD</button>
-            </div>
-            <div class="courses"></div>
-          </section>
-        </main>
-       
-    
+      </main>
     <footer>
         <p>Contact Information: Your Contact Info</p>
         <p>WDD 231 | Last Modified: <span id="last-modified"></span></p>

@@ -190,7 +190,6 @@ footer {
     color: var(--text-color);
     text-align: center;
     padding: 1rem;
-    bottom: 0;
 }
 
 #agric-show-img{
@@ -431,7 +430,7 @@ form button:focus {
     margin-bottom: 0.75rem;
 }
 
-.membership-cards button {
+.membership-cards button, .places-grid button{
     display: inline-block;
     padding: 0.5rem 1rem;
     color: var(--text-color);
@@ -441,7 +440,7 @@ form button:focus {
     transition: background-color 0.3s ease;
 }
 
-.membership-cards button:hover {
+.membership-cards button:hover, .places-grid button:hover {
     background-color: var(--secondary-color);
 }
 
@@ -500,8 +499,6 @@ form button:focus {
     }
 }
 
-
-
 .forecast ul{
     list-style: none;
     padding: 0;
@@ -509,4 +506,31 @@ form button:focus {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+/* Styles for Discover page */
+.places-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.place-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.place-card img {
+    border-radius: 4px;
+    aspect-ratio: 5/3;
+    width: 95%;
+}
+
+.current-events #agric-show-img{
+    width: 95%;
+    height: auto;
 }

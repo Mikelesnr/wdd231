@@ -9,47 +9,9 @@
     --box-shadow-color: #202327;
 }
 
-/* Roboto Regular */
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
-    font-weight: 400; /* Regular weight */
-    font-style: normal;
-    font-display: swap; /* Ensures fallback font is used while fonts load */
-}
-
-/* Roboto Bold */
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-BoldItalic.ttf') format('truetype');
-    font-weight: 700; /* Bold weight */
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Merriweather Regular */
-@font-face {
-    font-family: 'Merriweather';
-    src: url('../fonts/Merriweather_24pt-Regular.ttf') format('truetype');
-    font-weight: 400; /* Regular weight */
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Merriweather Bold */
-@font-face {
-    font-family: 'Merriweather';
-    src: url('../fonts/Merriweather_24pt-Bold.ttf') format('truetype');
-    font-weight: 700; /* Bold weight */
-    font-style: normal;
-    font-display: swap;
-}
-
-
 /* Basic styles for smaller screens */
 body {
     font-family: 'Merriweather', serif;
-    font-weight: 400;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
@@ -57,7 +19,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
     text-align: center;
 }
 

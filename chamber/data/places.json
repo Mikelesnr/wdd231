@@ -2,7 +2,7 @@
     {
         "id": "mkwisi-woodlands",
         "title": "Mkwisi Woodlands",
-        "image": "images/mkuvisi-woodlands.jpeg",
+        "image": "images/mkuvisi-woodlands.webp",
         "alt": "Mkwisi Woodlands",
         "address": "Mkwisi Woodlands, Harare",
         "summary": "Explore the serene beauty of Harare's Mkwisi Woodlands, perfect for picnics and nature walks.",
@@ -15,7 +15,7 @@
     {
         "id": "cleveland-dam",
         "title": "Cleveland Dam",
-        "image": "images/cleaveland-dam.jpeg",
+        "image": "images/cleaveland-dam.webp",
         "alt": "Cleveland Dam",
         "address": "Cleveland Dam, Harare",
         "summary": "A scenic reservoir offering tranquil views and recreational activities.",
@@ -28,7 +28,7 @@
     {
         "id": "africa-unity-square",
         "title": "Africa Unity Square",
-        "image": "images/africa-unity-square.jpg",
+        "image": "images/africa-unity-square.webp",
         "alt": "Africa Unity Square",
         "address": "Nelson Mandela Avenue, Harare",
         "summary": "A historic park in the heart of Harare, known for its fountains and flower vendors.",
@@ -41,7 +41,7 @@
     {
         "id": "parliament-building",
         "title": "Parliament Building",
-        "image": "images/parliament.png",
+        "image": "images/parliament.webp",
         "alt": "Parliament Building",
         "address": "Parliament Building, Harare",
         "summary": "An iconic structure symbolizing Zimbabwe's governance and history.",
@@ -54,7 +54,7 @@
     {
         "id": "reserve-bank",
         "title": "Reserve Bank of Zimbabwe",
-        "image": "images/reserve-bank-of-zim.jpeg",
+        "image": "images/reserve-bank-of-zim.webp",
         "alt": "Reserve Bank of Zimbabwe",
         "address": "Reserve Bank of Zimbabwe, Harare",
         "summary": "The tallest building in Harare, showcasing modern architecture and economic significance.",
@@ -67,7 +67,7 @@
     {
         "id": "cleveland-rifle-range",
         "title": "Cleveland Rifle Range",
-        "image": "images/cleaveland-range.jpg",
+        "image": "images/cleaveland-range.webp",
         "alt": "Cleveland Rifle Range",
         "address": "Cleveland Rifle Range, Harare",
         "summary": "A popular spot for shooting sports enthusiasts and outdoor activities.",
@@ -80,7 +80,7 @@
     {
         "id": "sam-levy-village",
         "title": "Sam Levy Village",
-        "image": "images/sam-levy-village.jpeg",
+        "image": "images/sam-levy-village.webp",
         "alt": "Sam Levy Village",
         "address": "Sam Levy Village, Harare",
         "summary": "A vibrant shopping and entertainment hub in Harare's northern suburbs.",
@@ -93,7 +93,7 @@
     {
         "id": "harare-showgrounds",
         "title": "Harare Showgrounds",
-        "image": "images/show-grounds-harare.jpeg",
+        "image": "images/show-grounds-harare.webp",
         "alt": "Harare Showgrounds",
         "address": "Harare Showgrounds, Harare",
         "summary": "The venue for the annual Harare Agricultural Show and other major events.",

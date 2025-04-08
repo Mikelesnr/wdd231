@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digi Jobs</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Digi Jobs</h1>
+        <div class="auth-buttons">
+            <button id="loginBtn">Login</button>
+            <button id="registerBtn">Register</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search jobs...">
+            <label for="experienceFilter">Filter by experience level:</label>
+            <select id="experienceFilter">
+                <option value="">All Levels</option>
+                <option value="Entry">Entry Level</option>
+                <option value="Mid">Mid Level</option>
+                <option value="Senior">Senior Level</option>
+            </select>
+        </div>
+
+        <div id="jobsContainer" class="jobs-grid"></div>
+
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageInfo">Page 1 of 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+
+        <div id="jobModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="jobDetails"></div>
+                <button id="applyBtn" class="secondary-btn">Apply Now</button>
+            </div>
+        </div>
+
+        <div id="applicationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Apply for <span id="jobTitle"></span></h2>
+                <form id="applicationForm">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="cover_letter" placeholder="Cover Letter" required></textarea>
+                    <label for="cv">Upload your CV:</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" title="Upload your CV in PDF, DOC, or DOCX format" required>
+                    <button type="submit" class="secondary-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

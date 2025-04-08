@@ -3,11 +3,12 @@ const API_BASE = 'https://michaelmwanza.site/api';
 let currentPage = 1;
 let totalPages = 1;
 let selectedJobId = null;
-const jobTypes = ["Engineering", "Marketing", "Finance", "Sales", "Human Resources","Web Designer","Backend","Frontend","Devops","Teaching"];
+const jobTypes = ["Engineering", "Marketing", "Finance", "Sales", "Human Resources", "Web Designer", "Backend", "Frontend", "Devops", "Teaching"];
 
 // DOM Elements
 const jobsContainer = document.getElementById('jobsContainer');
 const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
 const experienceFilter = document.getElementById('experienceFilter');
 const prevPageBtn = document.getElementById('prevPage');
 const nextPageBtn = document.getElementById('nextPage');
@@ -17,26 +18,42 @@ const applicationModal = document.getElementById('applicationModal');
 const jobDetails = document.getElementById('jobDetails');
 const jobTitle = document.getElementById('jobTitle');
 const applicationForm = document.getElementById('applicationForm');
+const applicationStatus = document.getElementById('applicationStatus');
+
+// Auth Elements
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById('registerBtn');
+const downloadUsersBtn = document.getElementById('downloadUsersBtn');
+const loginModal = document.getElementById('loginModal');
+const registerModal = document.getElementById('registerModal');
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+const loginError = document.getElementById('loginError');
+const registerError = document.getElementById('registerError');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     fetchJobs();
     setupEventListeners();
+    setupAuthEventListeners();
+    updateAuthUI();
 });
 
-// Fetch jobs from API with filters
+// Fetch jobs from API with search and filters
 async function fetchJobs(page = 1) {
     try {
+        const searchTerm = searchInput.value.trim();
         const experienceLevel = experienceFilter.value.toLowerCase();
-        let url = `${API_BASE}/jobs/?page=${page}`;
         
-        if (experienceLevel) {
-            url += `&experience_level=${experienceLevel}`;
+        let url;
+        if (searchTerm) {
+            url = `${API_BASE}/jobs/?title=${encodeURIComponent(searchTerm)}&page=${page}`;
+        } else {
+            url = `${API_BASE}/jobs/?page=${page}`;
         }
         
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm) {
-            url += `&search=${encodeURIComponent(searchTerm)}`;
+        if (experienceLevel) {
+            url += searchTerm ? `&experience_level=${experienceLevel}` : `&experience_level=${experienceLevel}`;
         }
 
         const response = await fetch(url);
@@ -70,7 +87,7 @@ function renderJobs(jobs) {
             <p class="location">${escapeHtml(job.location)}</p>
             <p class="experience ${job.experience_level.toLowerCase()}">${job.experience_level} Level</p>
             <p class="posted-date">Posted: ${formatDate(job.posted_at)}</p>
-            <p class="type">${jobTypes[job.category]}</p>
+            <p class="type">${jobTypes[job.category] || 'Other'}</p>
         `;
         jobCard.addEventListener('click', () => showJobDetails(job));
         jobsContainer.appendChild(jobCard);
@@ -84,7 +101,7 @@ function showJobDetails(job) {
         <h2>${escapeHtml(job.title)}</h2>
         <p><strong>Company:</strong> ${escapeHtml(job.company_name)}</p>
         <p><strong>Location:</strong> ${escapeHtml(job.location)}</p>
-        <p><strong>Experience:</strong> <span class="${job.experience_level.toLowerCase()}">${job.experience_level} Level</span></p>
+        <p><strong>Experience:</strong> ${job.experience_level} Level</p>
         <p><strong>Posted:</strong> ${formatDate(job.posted_at)}</p>
         <div class="job-description">${escapeHtml(job.description)}</div>
     `;
@@ -92,35 +109,36 @@ function showJobDetails(job) {
 }
 
 // Handle application form submission
-applicationForm.addEventListener('submit', async (e) => {
+applicationForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const formData = new FormData();
-    formData.append('job_post_id', selectedJobId);
-    formData.append('name', applicationForm.elements.name.value);
-    formData.append('email', applicationForm.elements.email.value);
-    formData.append('cover_letter', applicationForm.elements.cover_letter.value);
-    formData.append('cv', applicationForm.elements.cv.files[0]);
+    const application = {
+        job_id: selectedJobId,
+        name: applicationForm.elements.name.value,
+        email: applicationForm.elements.email.value,
+        cv_link: applicationForm.elements.cv_link.value,
+        cover_letter: applicationForm.elements.cover_letter.value,
+        applied_at: new Date().toISOString()
+    };
 
-    try {
-        const response = await fetch(`${API_BASE}/apply/`, {
-            method: 'POST',
-            body: formData
-        });
-
-        if (response.ok) {
-            alert('Application submitted successfully!');
-            applicationModal.style.display = 'none';
-            applicationForm.reset();
-        } else {
-            const error = await response.json();
-            alert(`Error: ${error.message || 'Application failed'}`);
-        }
-    } catch (error) {
-        console.error('Error submitting application:', error);
-        alert('Failed to submit application. Please try again.');
-    }
+    saveApplication(application);
+    
+    applicationStatus.textContent = 'Application submitted successfully!';
+    applicationStatus.className = 'success';
+    
+    setTimeout(() => {
+        applicationModal.style.display = 'none';
+        applicationForm.reset();
+        applicationStatus.textContent = '';
+    }, 2000);
 });
+
+// Save application to localStorage
+function saveApplication(application) {
+    let applications = JSON.parse(localStorage.getItem('jobApplications')) || [];
+    applications.push(application);
+    localStorage.setItem('jobApplications', JSON.stringify(applications));
+}
 
 // Helper functions
 function escapeHtml(unsafe) {
@@ -138,41 +156,173 @@ function formatDate(dateString) {
 function updatePagination() {
     pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
     prevPageBtn.disabled = currentPage === 1;
-    nextPageBtn.disabled = currentPage === totalPages;
+    nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
 }
 
 function setupEventListeners() {
-    // Close modals when clicking X
-    document.querySelectorAll('.close').forEach(closeBtn => {
-        closeBtn.addEventListener('click', () => {
+    // Modals
+    document.querySelectorAll('.close').forEach(btn => {
+        btn.addEventListener('click', () => {
             jobModal.style.display = 'none';
             applicationModal.style.display = 'none';
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'none';
         });
     });
 
-    // Apply button in job modal
+    // Apply button
     document.getElementById('applyBtn').addEventListener('click', () => {
         jobModal.style.display = 'none';
         jobTitle.textContent = document.querySelector('#jobDetails h2').textContent;
         applicationModal.style.display = 'block';
     });
 
-    // Close modals when clicking outside
+    // Window clicks
     window.addEventListener('click', (e) => {
         if (e.target === jobModal) jobModal.style.display = 'none';
         if (e.target === applicationModal) applicationModal.style.display = 'none';
+        if (e.target === loginModal) loginModal.style.display = 'none';
+        if (e.target === registerModal) registerModal.style.display = 'none';
     });
 
-    // Pagination buttons
-    prevPageBtn.addEventListener('click', () => {
-        if (currentPage > 1) fetchJobs(currentPage - 1);
-    });
+    // Pagination
+    prevPageBtn.addEventListener('click', () => currentPage > 1 && fetchJobs(currentPage - 1));
+    nextPageBtn.addEventListener('click', () => currentPage < totalPages && fetchJobs(currentPage + 1));
 
-    nextPageBtn.addEventListener('click', () => {
-        if (currentPage < totalPages) fetchJobs(currentPage + 1);
+    // Search/filter
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') fetchJobs(1);
     });
-
-    // Search and filter functionality
-    searchInput.addEventListener('input', () => fetchJobs(1));
+    searchBtn.addEventListener('click', () => fetchJobs(1));
     experienceFilter.addEventListener('change', () => fetchJobs(1));
 }
+
+// Auth Functions
+let users = JSON.parse(localStorage.getItem('jobBoardUsers')) || [];
+
+function updateAuthUI() {
+    const loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (loggedInUser) {
+        loginBtn.textContent = 'Logout';
+        registerBtn.classList.add('hidden');
+        downloadUsersBtn.classList.remove('hidden');
+    } else {
+        loginBtn.textContent = 'Login';
+        registerBtn.classList.remove('hidden');
+        downloadUsersBtn.classList.add('hidden');
+    }
+}
+
+function setupAuthEventListeners() {
+    // Auth buttons
+    loginBtn.addEventListener('click', () => {
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        if (user) {
+            localStorage.removeItem('currentUser');
+            updateAuthUI();
+            alert('Logged out successfully');
+        } else {
+            loginModal.style.display = 'block';
+        }
+    });
+
+    registerBtn.addEventListener('click', () => registerModal.style.display = 'block');
+    downloadUsersBtn.addEventListener('click', downloadUsersCSV);
+
+    // Forms
+    loginForm.addEventListener('submit', handleLogin);
+    registerForm.addEventListener('submit', handleRegister);
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const user = users.find(u => u.email === email && u.password === password);
+    
+    if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        loginModal.style.display = 'none';
+        loginForm.reset();
+        loginError.textContent = '';
+        updateAuthUI();
+        alert('Login successful!');
+    } else {
+        loginError.textContent = 'Invalid email or password';
+    }
+}
+
+function handleRegister(e) {
+    e.preventDefault();
+    const name = document.getElementById('registerName').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    const experience = document.getElementById('registerExperience').value;
+
+    if (users.some(u => u.email === email)) {
+        registerError.textContent = 'Email already registered';
+        return;
+    }
+
+    const newUser = {
+        id: Date.now(),
+        name,
+        email,
+        password,
+        experience,
+        registeredAt: new Date().toISOString()
+    };
+
+    users.push(newUser);
+    localStorage.setItem('jobBoardUsers', JSON.stringify(users));
+    
+    registerModal.style.display = 'none';
+    registerForm.reset();
+    registerError.textContent = '';
+    alert('Registration successful! Please login.');
+}
+
+function downloadUsersCSV() {
+    if (users.length === 0) {
+        alert('No users registered yet');
+        return;
+    }
+
+    let csv = 'ID,Name,Email,Experience Level,Registration Date\n';
+    users.forEach(user => {
+        csv += `${user.id},"${user.name}","${user.email}",${user.experience},${user.registeredAt}\n`;
+    });
+
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('hidden', '');
+    a.setAttribute('href', url);
+    a.setAttribute('download', 'job_board_users.csv');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+// Update current year in footer
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Update date and time in footer
+function updateDateTime() {
+    const now = new Date();
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
+}
+
+// Update immediately and then every second
+updateDateTime();
+setInterval(updateDateTime, 1000);

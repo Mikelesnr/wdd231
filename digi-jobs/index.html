@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digi Jobs</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script defer src="scripts/script.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Digi Jobs</title>
+        <link rel="stylesheet" href="styles/base.css">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script defer src="scripts/script.js"></script>
 </head>
 <body>
     <header>
@@ -14,13 +14,50 @@
         <div class="auth-buttons">
             <button id="loginBtn">Login</button>
             <button id="registerBtn">Register</button>
+            <button id="downloadUsersBtn" class="hidden">Download Users</button>
         </div>
     </header>
 
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit" class="secondary-btn">Login</button>
+            </form>
+            <p id="loginError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="text" id="registerName" placeholder="Full Name" required>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <label for="registerExperience">Experience Level:</label>
+                <select id="registerExperience">
+                    <option value="Entry">Entry Level</option>
+                    <option value="Mid">Mid Level</option>
+                    <option value="Senior">Senior Level</option>
+                </select>
+                <button type="submit" class="secondary-btn">Register</button>
+            </form>
+            <p id="registerError" class="error-message"></p>
+        </div>
+    </div>
+
     <main>
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search jobs...">
-            <label for="experienceFilter">Filter by experience level:</label>
+            <input type="text" id="searchInput" placeholder="Search jobs by title...">
+            <button id="searchBtn">Search</button>
+            <label for="experienceFilter">Filter by experience:</label>
             <select id="experienceFilter">
                 <option value="">All Levels</option>
                 <option value="Entry">Entry Level</option>
@@ -52,15 +89,23 @@
                 <form id="applicationForm">
                     <input type="text" name="name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email" required>
+                    <input type="url" name="cv_link" placeholder="Link to your CV/Portfolio" required>
                     <textarea name="cover_letter" placeholder="Cover Letter" required></textarea>
-                    <label for="cv">Upload your CV:</label>
-                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" title="Upload your CV in PDF, DOC, or DOCX format" required>
+                    <input type="hidden" id="jobIdInput" name="job_id">
                     <button type="submit" class="secondary-btn">Submit Application</button>
                 </form>
+                <p id="applicationStatus"></p>
             </div>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Digi Jobs. All rights reserved.</p>
+            <p>Created by Michael Mwanza™</p>
+            <div id="datetime"></div>
+        </div>
+    </footer>
+
 </body>
 </html>

@@ -23,6 +23,7 @@ const applicationStatus = document.getElementById('applicationStatus');
 // Auth Elements
 const loginBtn = document.getElementById('loginBtn');
 const registerBtn = document.getElementById('registerBtn');
+const heroBtn = document.getElementById('cta-button');
 const downloadUsersBtn = document.getElementById('downloadUsersBtn');
 const loginModal = document.getElementById('loginModal');
 const registerModal = document.getElementById('registerModal');
@@ -31,12 +32,17 @@ const registerForm = document.getElementById('registerForm');
 const loginError = document.getElementById('loginError');
 const registerError = document.getElementById('registerError');
 
+// Hero Section
+const heroSection = document.getElementById('hero');
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     fetchJobs();
     setupEventListeners();
     setupAuthEventListeners();
     updateAuthUI();
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
 });
 
 // Fetch jobs from API with search and filters
@@ -202,14 +208,18 @@ let users = JSON.parse(localStorage.getItem('jobBoardUsers')) || [];
 
 function updateAuthUI() {
     const loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
+    const body = document.body;
+    
     if (loggedInUser) {
         loginBtn.textContent = 'Logout';
         registerBtn.classList.add('hidden');
         downloadUsersBtn.classList.remove('hidden');
+        body.classList.add('hide-hero');
     } else {
         loginBtn.textContent = 'Login';
         registerBtn.classList.remove('hidden');
         downloadUsersBtn.classList.add('hidden');
+        body.classList.remove('hide-hero');
     }
 }
 
@@ -227,6 +237,9 @@ function setupAuthEventListeners() {
     });
 
     registerBtn.addEventListener('click', () => registerModal.style.display = 'block');
+    downloadUsersBtn.addEventListener('click', downloadUsersCSV);
+
+    heroBtn.addEventListener('click', () => registerModal.style.display = 'block');
     downloadUsersBtn.addEventListener('click', downloadUsersCSV);
 
     // Forms
@@ -294,7 +307,7 @@ function downloadUsersCSV() {
         csv += `${user.id},"${user.name}","${user.email}",${user.experience},${user.registeredAt}\n`;
     });
 
-    const blob = new Blob([csv], { type: 'text/csv' });
+    const blob = new Blob([csv], { type: 'text/csv' });registerBtn
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.setAttribute('hidden', '');
@@ -305,10 +318,7 @@ function downloadUsersCSV() {
     document.body.removeChild(a);
 }
 
-// Update current year in footer
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Update date and time in footer
+// Footer functions
 function updateDateTime() {
     const now = new Date();
     const options = { 
@@ -323,6 +333,5 @@ function updateDateTime() {
     document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
 }
 
-// Update immediately and then every second
-updateDateTime();
-setInterval(updateDateTime, 1000);
+// Initialize current year in footer
+document.getElementById('current-year').textContent = new Date().getFullYear();

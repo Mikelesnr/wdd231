@@ -65,7 +65,6 @@ async function fetchJobs(page = 1) {
         const data = await response.json();
         const itemsPerPage = 10; 
         totalPages = Math.ceil(data.count / itemsPerPage);
-        console.log(data.count, data.results.length);
         currentPage = page;
         updatePagination();
         renderJobs(data.results);

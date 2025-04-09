@@ -1,0 +1,6 @@
+@media (min-width: 768px) {
+    .nav-links {
+        width: 100%; /* Show for larger screens */
+        justify-content: space-around;
+    }
+}

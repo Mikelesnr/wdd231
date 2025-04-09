@@ -30,4 +30,25 @@
     .modal select {
         padding: 0.7rem;
     }
+
+    .responsive-nav .menu-toggle {
+        display: block; /* Shown for smaller screens */
+    }
+    
+    .responsive-nav .nav-links {
+        display: none; /* Hidden by default for smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 28%;
+        left: 5% ;
+        background-color: #333;
+        border: 1px solid #555;
+        padding: 10px;
+        width: 85%;
+        z-index: 4;
+    }
+
+    .responsive-nav .nav-links.open {
+        display: flex;
+    }
 }

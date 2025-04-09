@@ -5,22 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Digi Jobs</title>
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="scripts/script.js"></script>
 </head>
 <body>
     <header>
+        <section id="top-header">
         <h1>Digi Jobs</h1>
         <div class="auth-buttons">
             <button id="loginBtn">Login</button>
             <button id="registerBtn">Register</button>
             <button id="downloadUsersBtn" class="hidden">Download Users</button>
         </div>
+    </section>
+    <section id="bottom-header">
+        <nav class="responsive-nav">
+            <button class="menu-toggle" aria-label="Open navigation menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </section>
     </header>
 
     <!-- Hero Section -->
-    <section class="contact-hero">
-        <div class="hero-overlay"></div>
+    <section id="contact-hero" class="hero-section">
         <div class="hero-content">
             <h2>Get In Touch</h2>
             <p>We'd love to hear from you! Reach out with questions or feedback.</p>

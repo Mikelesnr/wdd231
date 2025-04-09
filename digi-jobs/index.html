@@ -14,17 +14,31 @@
         <link rel="stylesheet" href="styles/base.css">
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/small.css">
+        <link rel="stylesheet" href="styles/large.css">
         <link rel="stylesheet" href="styles/normalize.css">
+        <script defer src="scripts/index.js"></script>
         <script defer src="scripts/script.js"></script>
 </head>
 <body>
     <header>
+        <section id="top-header">
         <h1>Digi Jobs</h1>
         <div class="auth-buttons">
             <button id="loginBtn">Login</button>
             <button id="registerBtn">Register</button>
             <button id="downloadUsersBtn" class="hidden">Download Users</button>
         </div>
+    </section>
+    <section id="bottom-header">
+        <nav class="responsive-nav">
+            <button class="menu-toggle" aria-label="Open navigation menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </section>
     </header>
 
     <!-- Login Modal -->
@@ -62,7 +76,7 @@
         </div>
     </div>
 
-    <section id="hero" class="hero-section">
+    <section id="home-hero" class="hero-section">
         <div class="hero-content">
             <h2>Find Your Dream Tech Job</h2>
             <p>Connect with top employers in the digital industry</p>

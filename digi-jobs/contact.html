@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Digi Jobs</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Digi Jobs</h1>
+        <div class="auth-buttons">
+            <button id="loginBtn">Login</button>
+            <button id="registerBtn">Register</button>
+            <button id="downloadUsersBtn" class="hidden">Download Users</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you! Reach out with questions or feedback.</p>
+        </div>
+    </section>
+
+    <main class="contact-container">
+        <div class="contact-grid">
+            <section class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </section>
+
+            <section class="contact-info-section">
+                <h2>Our Location</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1459.0721527309415!2d31.1049866!3d-17.8136036!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2szw!4v1744161300260!5m2!1sen!2szw" 
+                            class="map-iframe" allowfullscreen="" title="Google Maps showing Digi Jobs location"></iframe>
+                </div>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>3 Alexander Road Highlands<br>Harare, Zimbabwe</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+263 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@digijobs.co.zw</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Digi Jobs. All rights reserved.</p>
+            <p>Created by Michael Mwanza™</p>
+            <div id="datetime"></div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formStatus = document.getElementById('formStatus');
+            formStatus.textContent = "Thank you for your message! We'll get back to you soon.";
+            formStatus.className = "form-status success";
+            
+            // Reset form after submission
+            setTimeout(() => {
+                this.reset();
+                formStatus.textContent = "";
+                formStatus.className = "form-status";
+            }, 3000);
+        });
+
+        // Initialize current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

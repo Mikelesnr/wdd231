@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Digi Jobs</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Digi Jobs</h1>
+        <div class="auth-buttons">
+            <button id="loginBtn">Login</button>
+            <button id="registerBtn">Register</button>
+            <button id="downloadUsersBtn" class="hidden">Download Users</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="aboutHero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Connecting Talent with Opportunity</h2>
+            <p>Our mission is to bridge the gap between tech professionals and innovative companies</p>
+        </div>
+    </section>
+
+    <main class="about-container">
+        <section class="about-section">
+            <h2>Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 2023, Digi Jobs began as a small project to help local tech professionals find meaningful work. Today, we've grown into a premier platform connecting thousands of job seekers with top employers across the digital landscape.</p>
+                    <p>What started as a simple job board has evolved into a comprehensive career ecosystem, offering resources, networking opportunities, and personalized career guidance.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/team-working.jpg" alt="Our team collaborating">
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We constantly evolve our platform to meet the changing needs of the tech industry.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Integrity</h3>
+                    <p>Honest, transparent relationships with both job seekers and employers.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Accessibility</h3>
+                    <p>Breaking down barriers to tech employment opportunities worldwide.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/michael-mwanza.jpg" alt="Michael Mwanza">
+                    <h3>Michael Mwanza</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team-member1.jpg" alt="Sarah Johnson">
+                    <h3>Sarah Johnson</h3>
+                    <p>Head of Product</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team-member2.jpg" alt="David Kim">
+                    <h3>David Kim</h3>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Digi Jobs. All rights reserved.</p>
+            <p>Created by Michael Mwanza™</p>
+            <div id="datetime"></div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

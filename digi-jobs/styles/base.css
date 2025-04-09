@@ -1,7 +1,7 @@
 :root {
     --primary-color: #86b995;
     --secondary-color: #eedfff;
-    --background-color: #857373;
+    --background-color: #554646;
     --tertiary-color: #291d1d;
     --text-color: #ffffff;
     --error-color: #ff6b6b;
@@ -240,6 +240,8 @@ select {
 .pagination button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    color: #291d1d;
+    background-color: #fff !important;
 }
 
 #applicationForm input, 
@@ -621,4 +623,8 @@ main h2, main h3{
 .about-text{
     background-color: var(--tertiary-color);
     padding: 20px;
+}
+
+#expFilterLabel{
+    color: #ffffff;
 }

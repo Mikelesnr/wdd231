@@ -3,4 +3,10 @@
         width: 100%; /* Show for larger screens */
         justify-content: space-around;
     }
+
+    .contact-item{
+        width:50%;
+        margin-left: 25%;
+    }
+
 }

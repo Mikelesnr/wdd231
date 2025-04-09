@@ -2,7 +2,7 @@
     --primary-color: #86b995;
     --secondary-color: #eedfff;
     --background-color: #857373;
-    --white-color: #291d1d;
+    --tertiary-color: #291d1d;
     --text-color: #ffffff;
     --error-color: #ff6b6b;
 }
@@ -17,7 +17,7 @@ body {
 
 #top-header {
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--tertiary-color);
     padding: 1.5rem;
     text-align: center;
     border-radius: 8px;
@@ -112,7 +112,7 @@ header h1 {
 #searchBtn {
     padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--tertiary-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -141,13 +141,14 @@ select {
 }
 
 .job-card {
-    background-color: var(--white-color);
+    background-color: var(--tertiary-color);
     color: var(--text-color);
     border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    text-align: center;
 }
 
 .job-card:hover {
@@ -184,7 +185,7 @@ select {
 }
 
 .modal-content {
-    background-color: var(--white-color);
+    background-color: var(--tertiary-color);
     margin: 5% auto;
     padding: 2rem;
     border-radius: 8px;
@@ -204,7 +205,7 @@ select {
 .secondary-btn {
     padding: 0.75rem 1.5rem;
     background-color: var(--secondary-color);
-    color: var(--white-color);
+    color: var(--tertiary-color);
     border: none;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
@@ -228,7 +229,7 @@ select {
 
 .pagination button {
     background-color: var(--secondary-color);
-    color: var(--white-color);
+    color: var(--tertiary-color);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -250,7 +251,7 @@ select {
     font-family: 'Merriweather', serif;
     border: 1px solid var(--background-color);
     border-radius: 4px;
-    background-color: var(--white-color);
+    background-color: var(--tertiary-color);
     color: var(--text-color);
 }
 
@@ -279,7 +280,7 @@ select {
 /* Footer Styles */
 footer {
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--tertiary-color);
     padding: 1.5rem;
     text-align: center;
     border-radius: 8px;
@@ -313,7 +314,7 @@ footer {
 }
 
 .modal-content {
-    background-color: var(--white-color);
+    background-color: var(--tertiary-color);
     margin: 10% auto;
     padding: 2rem;
     border-radius: 8px;
@@ -436,6 +437,11 @@ footer {
     padding: 0 2rem;
 }
 
+.contact-item h3{
+    width: 100%;
+    text-align: center;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -452,7 +458,7 @@ footer {
 }
 
 .contact-form {
-    background: var(--white-color);
+    background: var(--tertiary-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -487,7 +493,7 @@ footer {
 
 .submit-btn {
     background: var(--primary-color);
-    color: white;
+    color: var(--tertiary-color);
     border: none;
     padding: 0.8rem 2rem;
     border-radius: 6px;
@@ -514,26 +520,26 @@ footer {
 }
 
 .map-container {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    height: 285px;
 }
 
 .contact-details {
-    margin-top: 2rem;
+    background-color: var(--tertiary-color);
+    border-radius: 2%;
 }
 
 .contact-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
 
-.contact-icon {
+.contact-icon{
     font-size: 1.5rem;
-    margin-top: 0.3rem;
+    align-content: center;
 }
 
 .contact-item h3 {
@@ -589,3 +595,30 @@ header {
     color: #fff;
 }
 
+h2{
+    color: var(--tertiary-color);
+}
+
+.hero-section h2{
+    color: var(--text-color);
+}
+
+.value-card{
+    background-color: var(--tertiary-color) !important;
+}
+
+.team-member{
+    background-color: #333333 !important;
+    padding-top: 20px;
+}
+
+main h2, main h3{
+    background-color: var(--primary-color);
+    color: var(--tertiary-color) !important;
+    text-align: center;
+}
+
+.about-text{
+    background-color: var(--tertiary-color);
+    padding: 20px;
+}

@@ -39,7 +39,7 @@
         display: none; /* Hidden by default for smaller screens */
         flex-direction: column;
         position: absolute;
-        top: 28%;
+        top: 35%;
         left: 5% ;
         background-color: #333;
         border: 1px solid #555;
@@ -51,4 +51,44 @@
     .responsive-nav .nav-links.open {
         display: flex;
     }
+
+    .contact-item {
+        width: 95%;
+    }
+
+    .contact-icon{
+        padding-left: 20px;
+    }
+
+    .about-text p{
+        width:80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+    }
+
+    .modal{
+        text-align: center;
+    }
+
+    .about-image{
+        padding: 0%;
+        margin-bottom: 0% !important;
+        width: 95%
+    }
+
+    .contact-details{
+        margin-top: 40px;;
+    }
+
+    .map-container{
+        margin-top: 40px;
+    }
+
+    #contact-hero{
+        margin-bottom: 0% !important;
+    }
+
 }

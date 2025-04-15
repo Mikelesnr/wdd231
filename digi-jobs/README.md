@@ -24,6 +24,8 @@
 - **Responsive Design**: Works on mobile and desktop devices
 - **Real-time Clock**: Displays current date and time in footer
 
+## video url: https://youtu.be/y8fKGOXfuco
+
 ## API Routes
 
 The application uses the following API endpoints:

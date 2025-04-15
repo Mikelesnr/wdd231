@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="styles/small.css">
         <link rel="stylesheet" href="styles/large.css">
         <link rel="stylesheet" href="styles/normalize.css">
-        <script defer src="scripts/script.js"></script>
+        <script defer type="module" src="scripts/script.js"></script>
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     </head>
     
@@ -113,43 +113,5 @@
         </div>
     </footer>
 
-    <script>
-        // Contact Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formStatus = document.getElementById('formStatus');
-            formStatus.textContent = "Thank you for your message! We'll get back to you soon.";
-            formStatus.className = "form-status success";
-            
-            // Reset form after submission
-            setTimeout(() => {
-                this.reset();
-                formStatus.textContent = "";
-                formStatus.className = "form-status";
-            }, 3000);
-        });
-
-        // Initialize current year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Update date and time
-        function updateDateTime() {
-            const now = new Date();
-            const options = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
-        }
-        
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-    </script>
 </body>
 </html>

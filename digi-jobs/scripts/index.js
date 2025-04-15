@@ -1,3 +1,5 @@
+import { updateDateTime } from './time.js';
+
 // API Configuration
 const API_BASE = 'https://michaelmwanza.site/api';
 let currentPage = 1;
@@ -289,21 +291,6 @@ function handleRegister(e) {
     registerForm.reset();
     registerError.textContent = '';
     alert('Registration successful! Please login.');
-}
-
-// Footer functions
-function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    };
-    document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
 }
 
 // Initialize current year in footer
